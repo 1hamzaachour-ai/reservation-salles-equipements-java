@@ -1,0 +1,23 @@
+# Fichiers compilés
+out/
+bin/
+build/
+dist/
+*.class
+
+# Fichiers propres aux éditeurs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/private/
+
+# Copies de secours créées par le programme quand des lignes de données sont incorrectes
+data/*.bak
+
+# Fichier technique recréé par le programme au premier lancement (état d'exécution, non versionné)
+data/compteurs.txt
+
+# Le dossier data/ et ses fichiers texte font partie du projet : ils ne sont PAS ignorés
