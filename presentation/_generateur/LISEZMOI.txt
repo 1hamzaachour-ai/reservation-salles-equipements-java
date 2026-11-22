@@ -1,0 +1,30 @@
+GÉNÉRATEUR DE LA PRÉSENTATION (facultatif, ce dossier peut être supprimé)
+=========================================================================
+
+La présentation est déjà prête : ../Presentation_Projet_Java.pptx. Elle est entièrement modifiable dans PowerPoint
+(formes, textes et diagrammes natifs, aucune image). Pour changer un nom ou une phrase, le plus simple est donc
+de l'ouvrir dans PowerPoint. Ce dossier ne sert qu'à la régénérer.
+
+Contenu
+  content.py            texte du script oral (copié dans les notes de chaque diapositive et dans Script_Presentation.md)
+  lib.py                petites fonctions de dessin (python-pptx)
+  build_deck.py         construit les 12 diapositives
+  finalize.ps1          enregistre le .pptx avec PowerPoint en incorporant les polices, et exporte le PDF
+  render.ps1            exporte les diapositives en PNG et signale les textes qui débordent
+  gen_script.py         génère ../Script_Presentation.md
+  unregister_fonts.ps1  retire les polices enregistrées par render.ps1 / finalize.ps1
+  fonts/                Sora et Spline Sans Mono (licence SIL Open Font License : voir OFL-*.txt)
+
+Régénérer (Python avec python-pptx et PowerPoint installés ; utiliser des chemins complets)
+  python build_deck.py C:\temp\brut.pptx
+  powershell -File finalize.ps1 -Raw C:\temp\brut.pptx -Final C:\temp\Presentation_Projet_Java.pptx -Pdf C:\temp\Apercu_Presentation.pdf
+  python gen_script.py C:\temp\Script_Presentation.md
+
+Pour la page de garde : les trois informations entre crochets (noms, professeur, établissement) se complètent
+directement dans PowerPoint.
+
+Remarque sur les polices
+  Sora est utilisée avec un glyphe « espace » élargi (0,29 em au lieu de 0,21 em) pour que les mots restent lisibles
+  dans les titres. La licence OFL autorise cette modification (la police ne déclare aucun nom réservé). Les fichiers
+  .ttf de ce dossier sont ces versions modifiées ; elles sont incorporées dans le .pptx, il n'est donc pas nécessaire
+  d'installer les polices pour afficher la présentation dans PowerPoint.
